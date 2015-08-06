@@ -181,6 +181,10 @@ Proxy detection can be disabled via the command line option `--no-autodetect`.
 
 If auto-configuration fails, or the settings need to be overridden, there are a few command-line options that can be used to [configure proxies manually](#command-line-options): `-p, --proxy <host:port>`, `-w, --proxy-userpwd <user:pwd>`, `-T, --proxy-tunnel`, and `--pac <url>`.
 
+#### BrowserMob Proxy
+
+To use BrowserMob Proxy with Sauce Connect, you need to allow direct connections to Sauce Labs to establish the tunnel, then have Sauce Connect use the BrowserMob Proxy for all other traffic.  We have a document in our forums detailing how to do so: [BrowserMob Proxy and Sauce Connect 4](https://support.saucelabs.com/customer/portal/articles/2005368).
+
 ###  Managing Multiple Tunnels
 
 In its default mode of execution, one Sauce Connect instance will suffice all your needs and will require no efforts to make cloud browsers driven by your tests navigate through the tunnel.
