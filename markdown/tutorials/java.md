@@ -277,7 +277,7 @@ For a full example, see: https://github.com/ndmanvar/SeleniumJavaJunit/blob/mast
 
 To stop tests from timing out when you're already using all your Sauce Labs parallel slots, we need to limit the number of threads.
 
-The Sauce Labs Parallelized JUnit runner we used above uses the junit.parallel.threads System property to control how many threads it runs. Simply update your pom.xml like so:
+Simply update your pom.xml like so:
 
 ```xml
  <build>
