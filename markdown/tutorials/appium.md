@@ -121,7 +121,7 @@ The mobile operating system version that will be used (e.g 8.0, 7.1, 4.0, 5.0, e
 The version of the Appium driver that will be used. It is recommended to specify the latest Appium version which is the one suggested by the [Platforms Configurator](https://docs.saucelabs.com/reference/platforms-configurator/#/). If not specified the test will run against the default Appium version.
 
 - **app** (only for mobile native application or mobile hybrid application tests):
-The path to a .ipa, .apk or .zip file containing the app to test. This could be the location of your app in the [Temporary Sauce Storage](https://docs.saucelabs.com/reference/rest-api/#temporary-storage) (e.g sauce-storage:myapp.zip) or the URL to a remote location where your app is located (e.g http://myappurl.zip). This capability is not required for Android if you specify the **appPackage** and **appActivity** capabilities.
+The path to a .apk or .zip file containing the app to test. This could be the location of your app in the [Temporary Sauce Storage](https://docs.saucelabs.com/reference/rest-api/#temporary-storage) (e.g sauce-storage:myapp.zip) or the URL to a remote location where your app is located (e.g http://myappurl.zip). This capability is not required for Android if you specify the **appPackage** and **appActivity** capabilities.
 
 - **device-orientation** (optional):
 The orientation in which the simulator/device will be rendered (e.g portrait or landscape). 
