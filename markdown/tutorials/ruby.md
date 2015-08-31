@@ -236,7 +236,7 @@ RSpec.configure do |config|
     begin
       example.run
     ensure
-      SauceWhisk::Jobs.change_status job_id, !example.exception.nil?
+      SauceWhisk::Jobs.change_status job_id, example.exception.nil?
       @driver.quit
     end
   end
