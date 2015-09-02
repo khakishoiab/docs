@@ -217,7 +217,7 @@ You should be able to log into Sauce Labs and see your tests running in parallel
 
 ## Reporting on Test Results
 
-Selenium is a protocol focused on automating the actions of a browse, and as such, it doesn't encompass the notions of a 'test', 'passing' or 'failure'. Sauce Labs lets you notify us of test status using our [REST API.](https://docs.saucelabs.com/reference/rest-api/) All you need is the ID Sauce Labs gave the job, and the status your test ended with. Then, you can use the [Update Job](https://docs.saucelabs.com/reference/rest-api/#update-job) method on the REST API to set the job's status.
+Selenium is a protocol focused on automating the actions of a browser, and as such, it doesn't encompass the notions of a 'test', 'passing' or 'failure'. Sauce Labs lets you notify us of test status using our [REST API.](https://docs.saucelabs.com/reference/rest-api/) All you need is the ID Sauce Labs gave the job, and the status your test ended with. Then, you can use the [Update Job](https://docs.saucelabs.com/reference/rest-api/#update-job) method on the REST API to set the job's status.
 
 The Job ID is the simplest part of the process. The ID assigned to each job by Sauce Labs is the same as the Session ID for the corresponding Selenium session, which you can pull off the driver like so:
 
