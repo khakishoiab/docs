@@ -42,11 +42,10 @@ variables](https://circleci.com/docs/environment-variables) for more information
 ```yaml
 test:
   override:
-    - ./bin/sc -u $SAUCE_USERNAME -k $SAUCE_ACCESS_KEY -f ~/sc_ready:
+    - cd sc-*-linux && ./bin/sc --user $SAUCE_USERNAME --api-key $SAUCE_ACCESS_KEY --readyfile ~/sauce_is_ready:
         background: true
-        pwd: sc-*-linux
     # Wait for tunnel to be ready
-    - while [ ! -e ~/sc_ready ]; do sleep 1; done
+    - while [ ! -e ~/sauce_is_ready ]; do sleep 1; done
 ```
 
 ##Complete Example
@@ -64,11 +63,10 @@ dependencies:
 
 test:
   override:
-    - ./bin/sc -u $SAUCE_USERNAME -k $SAUCE_ACCESS_KEY -f ~/sc_ready:
+    - cd sc-*-linux && ./bin/sc --user $SAUCE_USERNAME --api-key $SAUCE_ACCESS_KEY --readyfile ~/sauce_is_ready:
         background: true
-        pwd: sc-*-linux
     # Wait for tunnel to be ready
-    - while [ ! -e ~/sc_ready ]; do sleep 1; done
+    - while [ ! -e ~/sauce_is_ready ]; do sleep 1; done
     - python -m hello.hello_app:
         background: true
     # Wait for app to be ready
