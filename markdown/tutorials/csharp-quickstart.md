@@ -224,4 +224,4 @@ namespace SauceLabs.SeleniumExamples
 
 ## Running Tests Against Local Applications
 
-If there are situations when you when you want to test an application that is not publicly available, or is behind a firewall, you can use Sauce Connect. Sauce Connect is a tunneling application that allows you to execute tests securely when testing behind firewalls or on localhost. You can find out more about Sauce Connect by checking out the [Sauce Connect documentation](https://docs.saucelabs.com/reference/sauce-connect/).
+If there are situations when you want to test an application that is not publicly available, or it is behind a firewall, you can use Sauce Connect. Sauce Connect is a tunneling application that allows you to execute tests securely when testing behind firewalls or on localhost. You can find out more about Sauce Connect by checking out the [Sauce Connect documentation](https://docs.saucelabs.com/reference/sauce-connect/).
