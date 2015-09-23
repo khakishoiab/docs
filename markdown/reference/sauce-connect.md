@@ -109,7 +109,7 @@ The `sc` command line program accepts the following parameters:
                                     list will be sent through the
                                     tunnel.
                                     Overrides '--direct-domains'.
-    -v, --verbose                   Enable verbose debugging.
+    -v, --verbose                   Enable verbose debugging. -vv will output HTTP headers as well
     -F, --fast-fail-regexps         Comma-separated list of regular
                                     expressions. Requests with URLs
                                     matching one of these will get
