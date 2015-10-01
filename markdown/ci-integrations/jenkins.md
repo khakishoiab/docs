@@ -70,7 +70,7 @@ Installing the Sauce Jenkins Plugin automatically installs Sauce Connect on your
 
 Go to your Project in Jenkins. Select __Configure__ on the left hand nav bar. Scroll down to the "Build Environment" section and select __Sauce OnDemand Support__. 
 
-This will open up a section called "Sauce Labs Options". At the top you will see a checkbox titled "Enable Sauce Connect?". Simply select the "Enable Sauce Connect" checkbox. Doing so will ensure that a Sauce Connect tunnel is started whenever Jenkins starts a build for that particular project.
+This will open up a section called __Sauce Labs Options__. At the top you will see a checkbox titled __Enable Sauce Connect?__. Simply select the "Enable Sauce Connect" checkbox. Doing so will ensure that a Sauce Connect tunnel is started whenever Jenkins starts a build for that particular project.
 
 ![enable Sauce Connect](https://docs.saucelabs.com/images/ci-integrations/jenkins/sauce-configure.37b02158.png)
 
@@ -183,11 +183,11 @@ Typically running tests in parallel requires you to change your build and test s
 
 Another way to run builds in parallel is to utilize the integration between the Sauce plugin and Jenkins matrix projects.  The Sauce plugin allows you to setup a matrix project using the browser/version/operating system as an axis, so a Jenkins build is invoked for each selected browser combination.
 
-You will first need to create a Jenkins project that is setup for matrix support.  When creating a new project, select the `Multi-configuration project` radio button.
+You will first need to create a Jenkins project that is setup for matrix support.  When creating a new project, select the __Multi-configuration project__ radio button.
 
 ![multi config new project](https://raw.githubusercontent.com/rossrowe/docs/master/images/ci-integrations/jenkins/multi-config-new-project.png)
 
-Then, select the `Add Axis` drop down and select `Sauce WebDriver Tests`.
+Then, select the __Add Axis__ drop down and select __Sauce WebDriver Tests__.
 
 ![multi config config 1](https://raw.githubusercontent.com/rossrowe/docs/master/images/ci-integrations/jenkins/multi-config-config-1.png)
 
@@ -207,15 +207,15 @@ To configure your Jenkins build to use parameterized builds, you will first need
 
 ![parameterized content 1](https://raw.githubusercontent.com/rossrowe/docs/master/images/ci-integrations/jenkins/parameterized-config-1.png)
 
-Then select the `Add Parameter` drop down and select `Sauce Labs Browsers`.
+Then select the __Add Parameter__ drop down and select __Sauce Labs Browsers__.
 
 ![parameterized content 2](https://raw.githubusercontent.com/rossrowe/docs/master/images/ci-integrations/jenkins/parameterized-config-2.png)
 
-Now you will see a `Build with parameters` option instead of a `Build` option. 
+Now you will see a __Build with parameters__ option instead of a __Build__ option. 
 
 ![parameterized build](https://raw.githubusercontent.com/rossrowe/docs/master/images/ci-integrations/jenkins/parameterized-build.png)
 
-When you click `Build with parameters`, you will be presented with a list of the supported Sauce browsers.  Select the browsers you want the test to use, and the Sauce plugin will populate the environment variables using the selected browsers.
+When you click __Build with parameters__, you will be presented with a list of the supported Sauce browsers.  Select the browsers you want the test to use, and the Sauce plugin will populate the environment variables using the selected browsers.
 
 ![parameterized browsers](https://raw.githubusercontent.com/rossrowe/docs/master/images/ci-integrations/jenkins/parameterized-browsers.png)
 
