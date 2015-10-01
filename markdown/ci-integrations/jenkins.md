@@ -100,7 +100,7 @@ __Note:__ Good testing practice suggests you reference environment variables to 
 #### Platform Environment Variables 
 Just below the check box where we enabled Sauce Connect you will see some options to select browser/OS combinations. Selecting platforms here creates environment variables on the Jenkins server that your tests can reference. 
 
-![platform selector](https://docs.saucelabs.com/images/ci-integrations/jenkins/jenkins-platform-selector.gif)
+![platform selector](https://docs.saucelabs.com/images/ci-integrations/jenkins/jenkins-platform-selection.gif)
 
 If a single platform is selected, then the ```SELENIUM_PLATFORM```, ```SELENIUM_VERSION```, and ```SELENIUM_BROWSER``` environment variables will be populated to contain the details of the selected browser. 
 
