@@ -14,7 +14,7 @@
 2. Automatically launches Sauce Connect
 3. Handles reporting between Jenkins and Sauce
 
-We'll explain each of these in more detail below as well as how to intsall the plugin. Much of what the plugin does relates to the setting of environment variables. 
+We'll explain each of these in more detail below as well as how to install the plugin. Much of what the plugin does relates to the setting of environment variables. 
 
 __Note:__ *We recommend making sure your tests run on Sauce Labs without Jenkins first before attempting to use the Jenkins Plugin.*
 
@@ -57,8 +57,8 @@ You can now refer to these in your tests by referencing ```SAUCE_USER_NAME``` an
 
 ```
 WebDriver driver = new RemoteWebDriver(
-            new URL("http://System.getenv("SAUCE_USER_NAME"):System.getenv("SAUCE_API_KEY")@ondemand.saucelabs.com:80/wd/hub"),
-                desiredCapabilities);
+            new URL("http://"+System.getenv("SAUCE_USER_NAME")+":"+System.getenv("SAUCE_API_KEY")+"@ondemand.saucelabs.com:80/wd/hub"),
+            desiredCapabilities);
 
 ```
 
@@ -85,7 +85,7 @@ Immediately below the fields where you input your Sauce Username and API Access 
 
 ![Jenkins Config](https://docs.saucelabs.com/images/ci-integrations/jenkins/sauce-admin.9927a717.png)
 
-Another advanced configuration is the Launch Sauce Connect on Slave - when selected, the Sauce Connect process will be launched on the Jenkins slave node which is executing the build. If not selected, then Sauce Connect will be launched on the Jenkins master node
+Another advanced configuration is the Launch Sauce Connect on Slave - when selected, the Sauce Connect process will be launched on the Jenkins slave node which is executing the build. If not selected, then Sauce Connect will be launched on the Jenkins master node.
 
 #### Changing the Default Location of Sauce Connect
 The Sauce Jenkins plugin comes bundled with the latest version of Sauce Connect, and when a Jenkins build is run with Sauce Connect enabled, the default behaviour of the plugin is to extract the Sauce Connect binary which is applicable for your operating system to your home directory.
@@ -95,14 +95,16 @@ You can change the location where the plugin extracts Sauce Connect by specifyin
 ## Setting Environment Variables
 The next feature that the Sauce Jenkins Plugin provides is a way to set [environment variables]() on the Jenkins server which contain details that you want to reference in your tests.  This makes it easy for you to change the browsers and operating systems that your tests run against without requiring you to change your test code each time.
 
-__Note:__ Good testing practice suggests you reference environment variables to access desired capabilities rather than hardcoding them into your tests. For more on that best practice, see this article on [Using Environment Variables in Your Tests](). 
+__Note:__ Good testing practice suggests you reference environment variables to access desired capabilities rather than hardcoding them into your tests.
 
 #### Platform Environment Variables 
 Just below the check box where we enabled Sauce Connect you will see some options to select browser/OS combinations. Selecting platforms here creates environment variables on the Jenkins server that your tests can reference. 
 
+![platform selector](https://docs.saucelabs.com/images/ci-integrations/jenkins/jenkins-platform-selector.gif)
+
 If a single platform is selected, then the ```SELENIUM_PLATFORM```, ```SELENIUM_VERSION```, and ```SELENIUM_BROWSER``` environment variables will be populated to contain the details of the selected browser. 
 
-If you select multiple (by holding command or ctrl while selecting) platforms, the __SAUCE_ONDEMAND_BROWSERS__ environment variable will be populated with a JSON-formatted string containing the attributes of the selected browsers. An example of the JSON string is:
+If you select multiple platforms, the __SAUCE_ONDEMAND_BROWSERS__ environment variable will be populated with a JSON-formatted string containing the attributes of the selected browsers. An example of the JSON string is:
 
 ```
 [
@@ -130,6 +132,10 @@ desiredCapabilities.setBrowserName(System.getenv("SELENIUM_BROWSER"));
 desiredCapabilities.setVersion(System.getenv("SELENIUM_VERSION"));
 desiredCapabilities.setCapability(CapabilityType.PLATFORM, System.getenv("SELENIUM_PLATFORM"));
 ```
+
+For multiple platforms, the JSON contents of the SAUCE_ONDEMAND_BROWSERS environment variable can be loaded using a JSON library in your language, and then looped through to get the platform combinations to be sent to your test framework.
+
+__Note__: You must reference these environment variables in your tests if you want to leverage the settings specified in the Jenkins Plugin. 
 
 When the __Use latest versions of browser__ checkbox is selected, the Sauce plugin will populate the environment variables with the version information for the latest available version that corresponds to the selected browser and operating system.
 
