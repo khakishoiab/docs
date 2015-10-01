@@ -93,14 +93,12 @@ The Sauce Jenkins plugin comes bundled with the latest version of Sauce Connect,
 You can change the location where the plugin extracts Sauce Connect by specifying a directory location in the __Sauce Connect Working Directory__ field. This can be done on a per-project basis under __Sauce Connect Advanced Options__ or for all projects under __Sauce Support__ in your Jenkins configuration.
 
 ## Setting Environment Variables
-The next feature that the Sauce Jenkins Plugin provides is a way to set [environment variables]() on the Jenkins server which contain details that you want to reference in your tests.  This makes it easy for you to change the browsers and operating systems that your tests run against without requiring you to change your test code each time.
+The next feature that the Sauce Jenkins Plugin provides is a way to set environment variables on the Jenkins server which contain details that you want to reference in your tests.  This makes it easy for you to change the browsers and operating systems that your tests run against without requiring you to change your test code each time.
 
 __Note:__ Good testing practice suggests you reference environment variables to access desired capabilities rather than hardcoding them into your tests.
 
 #### Platform Environment Variables 
 Just below the check box where we enabled Sauce Connect you will see some options to select browser/OS combinations. Selecting platforms here creates environment variables on the Jenkins server that your tests can reference. 
-
-![platform selector](https://docs.saucelabs.com/images/ci-integrations/jenkins/jenkins-platform-selection.gif)
 
 If a single platform is selected, then the ```SELENIUM_PLATFORM```, ```SELENIUM_VERSION```, and ```SELENIUM_BROWSER``` environment variables will be populated to contain the details of the selected browser. 
 
