@@ -56,7 +56,7 @@ If you need more concurrent VMs, concurrent devices, or more minutes, you can up
 1.  Click your account menu.
 2.  Click **Team Management**.
 3.  Next to your plan name, click **View Details**.
-4.  Click **Upgrade Plan** and choose the new plan details.,/li\>
+4.  Click **Upgrade Plan** and choose the new plan details.
 
 **Note: Using a Redemption Code**
 
