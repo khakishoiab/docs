@@ -96,7 +96,7 @@ namespace SauceLabs.SeleniumExamples
         private IWebDriver _Setup(string browser, string version, string platform)
         {
             // construct the url to sauce labs
-            Uri commandExecutorUri = new Uri("<http://ondemand.saucelabs.com/wd/hub>");
+            Uri commandExecutorUri = new Uri("http://ondemand.saucelabs.com/wd/hub");
             // set up the desired capabilities
             DesiredCapabilities desiredCapabilites = new DesiredCapabilities(browser, version, Platform.CurrentPlatform); // set the desired browser
             desiredCapabilites.SetCapability("platform", platform); // operating system to use
@@ -109,7 +109,7 @@ namespace SauceLabs.SeleniumExamples
             _Driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
 
             // navigate to the page under test
-            _Driver.Navigate().GoToUrl("<https://saucelabs.com/test/guinea-pig>");
+            _Driver.Navigate().GoToUrl("https://saucelabs.com/test/guinea-pig");
 
             return _Driver;
         }
